@@ -10,6 +10,8 @@ class Window:
         root.geometry(f"{self.width}x{self.height}")
         root.title("")
         root.iconbitmap("img/blackboard.ico")
+        self.draw_canvas = tk.Canvas(root, width = self.width, height = self.height, bg = "white")
+        self.draw_canvas.pack()
 
     def menu_bar(self, root) -> None:
         self.my_menu = tk.Menu(root)
@@ -21,7 +23,7 @@ class Window:
         self.my_menu.add_cascade(label = "Rediger", menu = self.edit_menu)
         self.my_menu.add_cascade(label = "Vis", menu = self.view_menu)
         self.my_menu.add_cascade(label = "Om", menu = self.about_menu)
-        self.file_menu.add_command(label="Text", compound = "left")
+        self.file_menu.add_command(label = "Text", compound = "left")
         root.config(menu = self.my_menu)
 
 if __name__ == "__main__":
