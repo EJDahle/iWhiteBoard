@@ -3,11 +3,13 @@ import tkinter as tk
 
 class Window:
 
-    def __init__(self, root, width, height) -> None:
+    def __init__(self, root, width, height, text, image_path) -> None:
         self.width = width
         self.height = height
         self.transparent = False
         root.geometry(f"{self.width}x{self.height}")
+        root.title(text)
+        root.iconbitmap(image_path)
 
     def menu_bar(self, root) -> None:
         self.my_menu = tk.Menu(root)
@@ -24,6 +26,6 @@ class Window:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    win = Window(root, 500, 500)
+    win = Window(root, 500, 500, "iTavle", 'img/blackboard.ico')
     win.menu_bar(root)
     root.mainloop()
